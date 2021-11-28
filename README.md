@@ -15,4 +15,6 @@ https://github.com/Fndroid/clash_for_windows_pkg/releases
 汉化
 https://github.com/BoyceLig/Clash_Chinese_Patch/releases
 
+订阅转换：https://bit.ly/2HBq9EY
+
 -------------------------------------------------------------------------
