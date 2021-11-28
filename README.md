@@ -55,7 +55,7 @@ yum -y install wget
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 
-- -------------------------------------------------------------------------
+- ----------------------------转发---------------------------------------------
 - #开启系统路由模式功能
 - echo net.ipv4.ip_forward=1>>/etc/sysctl.conf
 
