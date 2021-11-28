@@ -15,6 +15,7 @@
 - https://github.com/BoyceLig/Clash_Chinese_Patch/releases
 - 订阅转换：https://bit.ly/2HBq9EY
 - ----------------------------vps相关---------------------------------------------
+- 查看路由速率https://tools.ipip.net/traceroute.php
 - 免费域名申请网站https://www.freenom.com/ 
 - 域名解析网站：https://dash.cloudflare.com/
 - Centos安装宝塔面板脚本
@@ -22,4 +23,4 @@
 - 安装科学上网命令
 - bash <(curl -sL https://s.hijk.art/v2ray.sh)
 - -------------------------------------------------------------------------
-- 
+
