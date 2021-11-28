@@ -54,19 +54,21 @@ yum -y install wget
 安装bbr
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
+
 - -------------------------------------------------------------------------
-#开启系统路由模式功能
-echo net.ipv4.ip_forward=1>>/etc/sysctl.conf
-#运行这个命令会输出上面添加的那一行信息，意思是使内核修改生效
-sysctl -p
-#开启firewalld
-systemctl start firewalld
-#开启4650端口监听tcp请求
-firewall-cmd --zone=public --add-port=4567/tcp --permanent
-#设置IP地址伪装
-firewall-cmd --add-masquerade --permanent
-#设置端口映射
-firewall-cmd --add-forward-port=port=4567:proto=tcp:toaddr=172.65.239.73:toport=14444 --permanent
-firewall-cmd --add-masquerade --permanent
-#重启firewall
-firewall-cmd --reload
+- #开启系统路由模式功能
+- echo net.ipv4.ip_forward=1>>/etc/sysctl.conf
+
+- #运行这个命令会输出上面添加的那一行信息，意思是使内核修改生效
+- sysctl -p
+- #开启firewalld
+- systemctl start firewalld
+- #开启4650端口监听tcp请求
+- firewall-cmd --zone=public --add-port=4567/tcp --permanent
+- #设置IP地址伪装
+- firewall-cmd --add-masquerade --permanent
+- #设置端口映射
+- firewall-cmd --add-forward-port=port=4567:proto=tcp:toaddr=172.65.239.73:toport=14444 --permanent
+- firewall-cmd --add-masquerade --permanent
+- #重启firewall
+- firewall-cmd --reload
