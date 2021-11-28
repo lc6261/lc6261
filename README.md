@@ -3,12 +3,12 @@
 - 🌱 I’m currently learning ...
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
--------------------------------------------------------------------------
+---------------------------gihub----------------------------------------------
 GitHub Desktop的安装和使用「2020.7.8」
 下载:https://desktop.github.com/
 原文链接：https://blog.csdn.net/JCtry/article/details/107198217
 
--------------------------------------------------------------------------
+---------------------------clash----------------------------------------------
 clash.net
 下载
 https://github.com/Fndroid/clash_for_windows_pkg/releases
@@ -16,5 +16,15 @@ https://github.com/Fndroid/clash_for_windows_pkg/releases
 https://github.com/BoyceLig/Clash_Chinese_Patch/releases
 
 订阅转换：https://bit.ly/2HBq9EY
+
+----------------------------vps相关---------------------------------------------
+免费域名申请网站https://www.freenom.com/ 
+域名解析网站：https://dash.cloudflare.com/
+
+Centos安装宝塔面板脚本
+yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh
+
+安装科学上网命令
+bash <(curl -sL https://s.hijk.art/v2ray.sh)
 
 -------------------------------------------------------------------------
