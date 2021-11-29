@@ -1,0 +1,32 @@
+
+
+-----------------------------BBR是Google提出的提升TCP效率的算法--------------------------------------------
+BBR是Google提出的提升TCP效率的算法，在丢包率较高的网络上，可大幅度提升通信效率。BBR算法已在Linux上实现为内核补丁，不过比较旧的版本没有应用此补丁，新版本即使有也可能默认没有开启。本文介绍如何确认VPS上是否开启了BBR，以及如果没有开启，如何开启。
+
+# 第一项检查：
+root@topvps:~# sysctl net.ipv4.tcp_available_congestion_control | grep bbr
+
+# 若已开启bbr，结果通常为以下两种：
+net.ipv4.tcp_available_congestion_control = bbr cubic reno
+net.ipv4.tcp_available_congestion_control = reno cubic bbr
+
+# 第二项检查：
+root@topvps:~# sysctl net.ipv4.tcp_congestion_control | grep bbr
+# 若已开启bbr，结果如下：
+net.ipv4.tcp_congestion_control = bbr
+
+# 第三项检查：
+root@topvps:~# sysctl net.core.default_qdisc | grep fq
+# 若已开启bbr，结果如下：
+net.core.default_qdisc = fq
+
+# 第四项检查：
+root@topvps:~# lsmod | grep bbr
+# 若已开启bbr，结果可能如下。并不是所有的 VPS 都会有此返回值，若没有也属正常。
+tcp_bbr                20480  2
+
+安装wget
+yum -y install wget
+
+安装bbr
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh

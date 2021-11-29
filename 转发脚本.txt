@@ -1,0 +1,85 @@
+	1  ll
+    2  cd /usr/local/
+    3  wget --no-check-certificate https://github.com/samhocevar/rinetd/releases/download/v0.70/rinetd-0.70.tar.gz
+    4  install wget
+    5  yum install wget
+    6  wget --no-check-certificate https://github.com/samhocevar/rinetd/releases/download/v0.70/rinetd-0.70.tar.gz
+    7  ll
+    8  tair -
+    9  tar -zxvf rinetd-0.70.tar.gz 
+   10  ll
+   11  mv rinetd-0.70
+   12  ll
+   13  mv rinetd-0.70 rinetd
+   14  cd rinetd
+   15  sed -i 's/65536/65535/g' rinetd.c
+   16  ./configure --prefix=/usr/local/rinetd
+   17  yum -y install autoconf automake libtool
+   18  make && make install
+   19  ll
+   20  make
+   21  pwd
+   22  ./configure --prefix=/usr/local/rinetd
+   23  make && make install
+   24  vim /usr/local/rinetd/etc/rinetd.conf
+   25  vi /usr/local/rinetd/etc/rinetd.conf
+   26  rinetd -c /usr/local/rinetd/etc/rinetd.conf
+   27  ./rinetd -c /usr/local/rinetd/etc/rinetd.conf
+   28  netstat -nltp
+   29  cat /usr/local/rinetd/etc/rinetd.conf
+   30  ping 47.117.118.178
+   31  vi /usr/local/rinetd/etc/rinetd.conf
+   32  pkill rinetd 
+   33  ./rinetd -c /usr/local/rinetd/etc/rinetd.conf
+   34  netstat -nltp
+   35  vi /usr/local/rinetd/etc/rinetd.conf
+   36  pkill rinetd  
+   37  rinetd -c /usr/local/rinetd/etc/rinetd.conf
+   38  ./rinetd -c /usr/local/rinetd/etc/rinetd.conf
+   39  ping asia2.ethermine.org
+   40  vi /usr/local/rinetd/etc/rinetd.conf
+   41  netstat -nltp
+   42  pkill rinetd
+   43  netstat -nltp
+   44  ./rinetd -c /usr/local/rinetd/etc/rinetd.conf
+   45  netstat -nltp
+   46  ping cn.ezil.me
+   47  ping asia.ezil.me
+   48  ping asia2.ethermine.org
+   49  netstat -anp | grep 14444
+   50  netstat -anp | grep 5555
+   51  netstat -anp | grep 15555
+   52  history
+   
+   
+    1  wget -qO natcfg.sh https://raw.githubusercontent.com/arloor/iptablesUtils/master/natcfg.sh && bash natcfg.sh
+    2  wget -qO natcfg.sh http://arloor.com/sh/iptablesUtils/natcfg.sh && bash natcfg.sh
+    3  sudo su
+    4  wget -qO natcfg.sh http://arloor.com/sh/iptablesUtils/natcfg.sh && bash natcfg.sh
+    5  cd /
+    6  ls
+    7  wget -qO natcfg.sh http://arloor.com/sh/iptablesUtils/natcfg.sh && bash natcfg.sh
+    8  cd
+    9  wget -qO natcfg.sh http://arloor.com/sh/iptablesUtils/natcfg.sh && bash natcfg.sh
+   10  wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/iptables-pf.sh && chmod +x iptables-pf.sh && bash iptables-pf.sh
+   11  wget -qO natcfg.sh http://arloor.com/sh/iptablesUtils/natcfg.sh && bash natcfg.sh
+   12  wget -qO natcfg.sh https://raw.githubusercontent.com/arloor/iptablesUtils/master/natcfg.sh && bash natcfg.sh
+   13  bt
+   14  yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh
+   15  wget -N --no-check-certificate https://www.vrrmr.net/Code/iptables-pf.sh && chmod +x iptables-pf.sh && bash iptables-pf.sh
+   16  ping asia2.ethermine.org
+   17  wget -N --no-check-certificate https://www.vrrmr.net/Code/iptables-pf.sh && chmod +x iptables-pf.sh && bash iptables-pf.sh
+   18  bt
+   19  ping 172.65.239.73
+   20  wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/brook-pf.sh && chmod +x brook-pf.sh && bash brook-pf.sh
+   21  1
+   22  wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/brook-pf.sh && chmod +x brook-pf.sh && bash brook-pf.sh
+   23  7
+   24  wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/brook-pf.sh && chmod +x brook-pf.sh && bash brook-pf.sh
+   25  firewall-cmd --zone=public --list-ports
+   26  firewall-cmd --zone=public --add-port=444/tcp --permanent
+   27  firewall-cmd --zone=public --add-port=14444/tcp --permanent
+   28  firewall-cmd --zone=public --add-port=5555/tcp --permanent
+   29  firewall-cmd --reload
+   30  history
+[root@c2021112944541 ~]#
