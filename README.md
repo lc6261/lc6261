@@ -8,8 +8,6 @@
 - 下载:https://desktop.github.com/
 - 原文链接：https://blog.csdn.net/JCtry/article/details/107198217
 
-
-
 - ---------------------------clash----------------------------------------------
 - clash.net
 - 下载
@@ -85,4 +83,3 @@ tcp_bbr                20480  2
 - ----------------------------v2ray---------------------------------------------
 - https://www.clloz.com/programming/assorted/2021/11/15/vps-2021/
 - https://github.com/v2fly/fhs-install-v2ray
-- 
