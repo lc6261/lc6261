@@ -72,3 +72,6 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 - firewall-cmd --add-masquerade --permanent
 - #重启firewall
 - firewall-cmd --reload
+- ----------------------------v2ray---------------------------------------------
+- https://www.clloz.com/programming/assorted/2021/11/15/vps-2021/
+- 
