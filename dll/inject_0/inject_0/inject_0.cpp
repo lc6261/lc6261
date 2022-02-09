@@ -15,7 +15,7 @@
 #include <map>
 
 //获取PID
-UINT GetProPid(LPCTSTR pszExeFile)
+UINT GetProPID(LPCTSTR pszExeFile)
 {
 	//查找当前的进程的pid
 	UINT nProcessID = 0;
@@ -223,7 +223,7 @@ BOOL showejectdll(DWORD dwPID, LPCTSTR szDllName)
 	bMore = Module32First(hSnapshot, &me);
 	for (; bMore; bMore = Module32Next(hSnapshot, &me))
 	{
-		//wprintf(L"%s:%d:%s\n", _T(__FUNCTION__), __LINE__, me.szModule);
+		wprintf(L"%s:%d:%s\n", _T(__FUNCTION__), __LINE__, me.szModule);
 		if (!_tcsicmp(me.szModule, szDllName) || !_tcsicmp(me.szExePath, szDllName))
 		{
 			bFound = TRUE;
@@ -346,7 +346,7 @@ BOOL EjectDll(DWORD dwPID, LPCTSTR szDllName)
 	CloseHandle(hSnapshot);
 
 
-	pThreadProc = (LPTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandle(L"kernel32.dll"), "FreeLibrary");
+	pThreadProc = (LPTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandle(L"kernel32.dll"), "FreeLibraryAndExitThread");
 	if (pThreadProc == NULL)
 	{
 		DWORD dwErr = GetLastError();
@@ -366,6 +366,7 @@ BOOL EjectDll(DWORD dwPID, LPCTSTR szDllName)
 	CloseHandle(hThread);
 	CloseHandle(hProcess);
 	wprintf(L"%s:%d:%s done\n", _T(__FUNCTION__), __LINE__, szDllName);
+	showejectdll(dwPID, szDllName);
 
 	return TRUE;
 }
@@ -479,6 +480,7 @@ DWORD _EnableNTPrivilege(LPCTSTR szPrivilege, DWORD dwState)
 
 	return dwRtn;
 }
+#if 1
 #define TEST_0  0
 int _tmain(int argc, TCHAR* argv[])
 {
@@ -490,8 +492,14 @@ int _tmain(int argc, TCHAR* argv[])
 	_EnableNTPrivilege(SE_DEBUG_NAME, SE_PRIVILEGE_ENABLED);
 
 #ifdef TEST_0
-	//dwProcessID = GetProPid(_T("win32calc.exe"));
-	dwProcessID = GetProPid(_T("test_mfc1.exe"));
+	const LPCWSTR AppWindowTitle = L"Mir4G[0]"; // Targeted D11 Application Window Title.
+	HWND hwnd = FindWindow(0, AppWindowTitle);
+	wprintf(L"FindWindow %s=%d\n", AppWindowTitle, hwnd);
+
+	getchar();
+
+	const LPCWSTR AppName = L"EmptyProject11.exe"; // Targeted D11 Application Window Title.
+	dwProcessID = GetProPID(AppName);
 	ret = GetProcess(dwProcessID);
 	if (ret != TRUE)
 	{
@@ -499,7 +507,7 @@ int _tmain(int argc, TCHAR* argv[])
 	}
 
 	//test = L"D:\\BaiduNetdiskWorkspace\\GitHub\\lc6261\\dll\\testdll0\\dll_test_0\\x64\\Debug\\dll_test_0.dll";
-	test = L"D:\\BaiduNetdiskWorkspace\\GitHub\\lc6261\\dll\\dll_test_0\\Debug\\dll_test_0.dll";
+	test = L"D:\\BaiduNetdiskWorkspace\\GitHub\\Universal-ImGui-D3D11-Hook\\Debug\\Universal-ImGui-D11-Hook.dll";
 
 #else
 	dwProcessID = (DWORD)_tstoi(argv[2]);
@@ -526,3 +534,15 @@ int _tmain(int argc, TCHAR* argv[])
 	//system("PAUSE");
 	return 0;
 }
+#else
+int main()
+{
+	CHAR* test ="D:\\BaiduNetdiskWorkspace\\GitHub\\Universal-ImGui-D3D11-Hook\\Debug\\Universal-ImGui-D11-Hook.dll";
+
+	auto module = LoadLibraryA(test);
+	Sleep(5000);
+	printf("ret=%d", FreeLibrary(module));
+	getchar();
+	return 0;
+}
+#endif
